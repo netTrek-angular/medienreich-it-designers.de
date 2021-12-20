@@ -1,0 +1,14 @@
+:host {
+
+  display: block;
+  background-color: antiquewhite;
+
+  ::ng-deep p {
+    color: red;
+  }
+}
+
+
+h3 {
+  color: #005eff;
+}
