@@ -1,11 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 
 @Component({
   selector: 'itd-countdown',
   templateUrl: './countdown.component.html',
   styleUrls: ['./countdown.component.scss']
 })
-export class CountdownComponent implements OnInit {
+export class CountdownComponent implements OnInit, OnDestroy {
 
   private intervalID?: number;
   private duration = 4000;
@@ -16,6 +16,10 @@ export class CountdownComponent implements OnInit {
 
   ngOnInit(): void {
     this.startCountdown();
+  }
+
+  ngOnDestroy(): void {
+    this.stopInterval();
   }
 
   private startCountdown() {
@@ -33,4 +37,5 @@ export class CountdownComponent implements OnInit {
       this.intervalID = undefined;
     }
   }
+
 }
