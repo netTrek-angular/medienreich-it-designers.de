@@ -2,4 +2,19 @@
   display: block;
   background-color: beige;
   padding: 10px;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: #a6a6a2;
+  }
+
+  &.selected {
+    background-color: #b4b4ef;
+    &:hover {
+      background-color: #b4b4ef;
+      //cursor: none;
+    }
+  }
 }
+

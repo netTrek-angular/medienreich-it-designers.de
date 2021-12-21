@@ -9,13 +9,15 @@ import {User} from "../user";
 export class UserListComponent  {
 
   users: User[] = [
-    {firstname: 'Saban', lastname: 'Ünlü'},
+    {firstname: 'Saban', lastname: 'Ünlü', age: 44},
     {firstname: 'Heike', lastname: 'Müller'},
     {firstname: 'Petra', lastname: 'Mayer'},
   ]
+  selectedUser?: User;
 
   constructor() { }
 
-
-
+  selectUser($event: User) {
+    this.selectedUser = $event === this.selectedUser ? undefined : $event;
+  }
 }
