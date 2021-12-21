@@ -1,19 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BindingsSampleComponent } from './bindings-sample.component';
+import { CountdownComponent } from './countdown/countdown.component';
 
 
 
 @NgModule({
   declarations: [
-    BindingsSampleComponent
+    BindingsSampleComponent,
+    CountdownComponent
   ],
   imports: [
     CommonModule
   ],
   exports: [
 
-    BindingsSampleComponent
+    BindingsSampleComponent,
+     CountdownComponent
   ]
 })
 export class BindingsSampleModule { }

@@ -1,1 +1,23 @@
-<p>bindings-sample works!</p>
+<h3>bindings-sample works!</h3>
+
+<itd-countdown></itd-countdown>
+
+<ul>
+  <li>Ausdruck = [{{ 1 + 1 }}] - BITTE NIE SO VERWENDEN</li>
+  <li>Ausdruck - Eigenschaftsbindung = [{{prop}}]</li>
+  <li>Ausdruck - MwSt berechnen [{{netto * 1.19}}]</li>
+  <li>Ausdruck - MwSt mit Methode [{{calcBrutto(netto)}}] - sparsame Nutzung (lieber Pipes)</li>
+</ul>
+
+<div [innerText]="innerText"
+     [style.color]="fontColor"
+     [style.backgroundColor]="bgColor"
+     [style.width.%]="width"
+></div>
+<div [innerHTML]="innerHtml"></div>
+
+<img [src]="imgAbsolutPath" [attr.alt]="imgAlt"/>
+<img src="./assets/img/{{imgFile}}" alt="{{imgAlt}}"/>
+
+
+<button (click)="chgImg()">chg Img</button>
