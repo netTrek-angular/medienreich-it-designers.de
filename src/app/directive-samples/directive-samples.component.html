@@ -1,6 +1,50 @@
 <h3>directiveSamples</h3>
-<button (click)="toggleShowImg()">toggle show Img</button>
+<button (confirmed)="toggleShowImg()" itdDanger="toggeln???">toggle show Img</button>
 <hr>
+
+<ul>
+  <li
+    *ngFor="let val of [1,2,3]; index as i; count as c; even as e; odd as o"
+    [ngClass]="{'even': e, 'odd': o}"
+  >
+    {{i}} # {{val}} - {{c}}
+  </li>
+</ul>
+
+
+<!--
+
+<ul>
+  <ng-container *ngFor="let val of [1,2,3]; index as i; count as c; even as e; odd as o">
+    <li
+      *ngIf="e"
+      [class.even]="e"
+      [class.odd]="o"
+    >
+      {{i}} # {{val}} - {{c}}
+    </li>
+  </ng-container>
+</ul>
+
+-->
+
+
+<!--
+
+<ul>
+  <li
+    *ngFor="let val of [1,2,3]; index as i; count as c; even as e; odd as o"
+    [class.even]="e"
+    [class.odd]="o"
+  >
+    {{i}} # {{val}} - {{c}}
+  </li>
+</ul>
+
+-->
+
+<!--
+
 
 <img
   *ngIf="showImg; else templateNameThatShouldBeShown"
@@ -11,6 +55,7 @@
   <div>image should not be shown</div>
 </ng-template>
 
+-->
 
 <!--
 
@@ -34,12 +79,13 @@
 
 <!--
 
+
+
+
+
+-->
 <ng-template [ngIf]="showImg">
   <img src="./assets/img/smallCat.jpeg" />
   <div>description of image</div>
   <hr>
 </ng-template>
-
-
-
--->

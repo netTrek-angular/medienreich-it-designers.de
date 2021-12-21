@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DirectiveSamplesComponent } from './directive-samples.component';
+import {UtilsModule} from "../utils/utils.module";
 
 
 
@@ -8,9 +9,10 @@ import { DirectiveSamplesComponent } from './directive-samples.component';
   declarations: [
     DirectiveSamplesComponent
   ],
-  imports: [
-    CommonModule
-  ],
+    imports: [
+        CommonModule,
+        UtilsModule
+    ],
   exports: [
     DirectiveSamplesComponent
   ]

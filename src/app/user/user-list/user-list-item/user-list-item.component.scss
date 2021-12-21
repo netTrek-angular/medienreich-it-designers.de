@@ -7,6 +7,10 @@ $selectedHoverColor: #b4b4ef;
 
   cursor: pointer;
 
+  &.even {
+    background-color: #c0c0a7;
+  }
+
   &:hover {
     background-color: #a6a6a2;
   }

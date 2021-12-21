@@ -1,6 +1,18 @@
 <h3>user-list works!</h3>
 
 <itd-user-list-item
+  *ngFor="let user of users; even as e"
+  [class.even]="e"
+  [isSelected]="selectedUser===user"
+  [user]="user"
+  (selectedUsr)="selectUser($event)"
+></itd-user-list-item>
+
+
+
+<!--
+
+<itd-user-list-item
   [isSelected]="selectedUser===users[0]"
   [user]="users[0]"
   (selectedUsr)="selectUser($event)"
@@ -15,6 +27,8 @@
   [user]="users[2]"
   (selectedUsr)="selectUser($event)"
 ></itd-user-list-item>
+-->
+
 
 <!--
 <itd-user-list-ite
