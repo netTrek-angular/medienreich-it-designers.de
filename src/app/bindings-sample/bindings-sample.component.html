@@ -1,12 +1,20 @@
 <h3>bindings-sample works!</h3>
 
 <itd-countdown></itd-countdown>
-
+<strong>{{selected}}</strong>
 <ul>
-  <li>Ausdruck = [{{ 1 + 1 }}] - BITTE NIE SO VERWENDEN</li>
-  <li>Ausdruck - Eigenschaftsbindung = [{{prop}}]</li>
-  <li>Ausdruck - MwSt berechnen [{{netto * 1.19}}]</li>
-  <li>Ausdruck - MwSt mit Methode [{{calcBrutto(netto)}}] - sparsame Nutzung (lieber Pipes)</li>
+  <li
+    [class.my-content]="selected === 1"
+    (click)="select(1)">Ausdruck = [{{ 1 + 1 }}] - BITTE NIE SO VERWENDEN</li>
+  <li
+    [class.my-content]="selected === 2"
+    (click)="select(2)">Ausdruck - Eigenschaftsbindung = [{{prop}}]</li>
+  <li
+    [class.my-content]="selected === 3"
+    (click)="select(3)">Ausdruck - MwSt berechnen [{{netto * 1.19}}]</li>
+  <li
+    [class.my-content]="selected === 4"
+    (click)="select(4)">Ausdruck - MwSt mit Methode [{{calcBrutto(netto)}}] - sparsame Nutzung (lieber Pipes)</li>
 </ul>
 
 <div [innerText]="innerText"
@@ -14,7 +22,8 @@
      [style.backgroundColor]="bgColor"
      [style.width.%]="width"
 ></div>
-<div [innerHTML]="innerHtml"></div>
+<div class="my-content" [innerHTML]="innerHtml"></div>
+<div class="static-class" [class]="classnames" [innerHTML]="innerHtml"></div>
 
 <img [src]="imgAbsolutPath" [attr.alt]="imgAlt"/>
 <img src="./assets/img/{{imgFile}}" alt="{{imgAlt}}"/>

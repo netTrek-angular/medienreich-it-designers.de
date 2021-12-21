@@ -18,6 +18,8 @@ export class BindingsSampleComponent {
   fontColor: string = 'red';
   bgColor: string = 'yellow';
   width: number = 50;
+  selected?: number;
+  classnames: string = 'my-content my-test';
 
   calcBrutto(val: number): number {
     return val * 1.19;
@@ -30,5 +32,9 @@ export class BindingsSampleComponent {
   chgImg() {
     this.imgFile = 'smallCat.jpeg';
     this.imgAlt = 'small cat';
+  }
+
+  select(selected: number) {
+    this.selected = selected;
   }
 }
