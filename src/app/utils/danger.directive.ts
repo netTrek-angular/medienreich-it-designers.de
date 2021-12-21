@@ -1,4 +1,4 @@
-import {Directive, ElementRef, EventEmitter, HostBinding, HostListener, Input, Output} from '@angular/core';
+import {Directive, ElementRef, EventEmitter, HostBinding, HostListener, Input, Output, Renderer2} from '@angular/core';
 
 @Directive({
   selector: 'button[itdDanger]'
@@ -17,8 +17,10 @@ export class DangerDirective {
   @Input()
   itdDanger = ''
 
-  constructor( /*elemRef: ElementRef*/ ) {
+  constructor( elemRef: ElementRef, private renderer: Renderer2 ) {
     // console.log( 'danger directive generated', elemRef )
+    // renderer verwenden, um sicher zu gehen das man auf universal (SSR) umstellen könnte
+    this.renderer.setStyle( elemRef.nativeElement, 'color', 'yellow');
   }
 
   @HostListener('click')
