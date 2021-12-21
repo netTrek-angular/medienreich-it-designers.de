@@ -1,3 +1,5 @@
+$selectedHoverColor: #b4b4ef;
+
 :host {
   display: block;
   background-color: beige;
@@ -10,9 +12,9 @@
   }
 
   &.selected {
-    background-color: #b4b4ef;
+    background-color: $selectedHoverColor;
     &:hover {
-      background-color: #b4b4ef;
+      background-color: $selectedHoverColor;
       //cursor: none;
     }
   }

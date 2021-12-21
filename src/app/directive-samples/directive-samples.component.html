@@ -1,0 +1,45 @@
+<h3>directiveSamples</h3>
+<button (click)="toggleShowImg()">toggle show Img</button>
+<hr>
+
+<img
+  *ngIf="showImg; else templateNameThatShouldBeShown"
+  src="./assets/img/smallCat.jpeg"
+/>
+
+<ng-template #templateNameThatShouldBeShown>
+  <div>image should not be shown</div>
+</ng-template>
+
+
+<!--
+
+<img
+  *ngIf="showImg"
+  src="./assets/img/smallCat.jpeg"
+/>
+
+<div *ngIf="!showImg">image should not be shown</div>
+
+-->
+
+<!--
+
+<img
+  *ngIf="showImg"
+  src="./assets/img/smallCat.jpeg"
+/>
+<div *ngIf="showImg">description of image</div>
+-->
+
+<!--
+
+<ng-template [ngIf]="showImg">
+  <img src="./assets/img/smallCat.jpeg" />
+  <div>description of image</div>
+  <hr>
+</ng-template>
+
+
+
+-->

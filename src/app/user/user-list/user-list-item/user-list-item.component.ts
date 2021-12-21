@@ -26,8 +26,9 @@ export class UserListItemComponent /*implements OnChanges*/ {
 
   constructor() { }
 
-  @HostListener('click')
-  selectUser() {
+  @HostListener('click', ['$event'])
+  selectUser( mouseEvent: MouseEvent ) {
+    console.log( mouseEvent )
     this.selectedUsr.emit( this.user );
   }
 
