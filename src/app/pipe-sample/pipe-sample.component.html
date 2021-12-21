@@ -1,0 +1,49 @@
+<h3>pipe-sample works!</h3>
+
+<h4>JSON</h4>
+<p>
+  {{sampleObject | json}}
+</p>
+
+<h4>tax</h4>
+<ul>
+  <li>{{samplePrice}}</li>
+  <li>{{samplePrice | tax | currency : 'EUR' }}</li>
+  <li>{{samplePrice | tax : true | currency : 'EUR' }}</li>
+</ul>
+
+<h4>Numbers</h4>
+<ul>
+  <li>{{sampleNum}}</li>
+  <li>{{sampleNum | currency : 'EUR' }}</li>
+  <li>{{sampleNum | currency : 'EUR' : 'symbol' }}</li>
+  <li>{{sampleNum | currency : 'EUR' : 'code' }}</li>
+  <li>{{sampleNum | currency : 'EUR' : 'symbol' : '.2-5' }}</li>
+  <li>{{(sampleNum*1000) | currency : 'EUR' : 'symbol' : '.2-5' }}</li>
+  <li>{{(sampleNum*1000) | currency : 'EUR' : 'symbol' : '.2-5' : 'en' }}</li>
+  <li>----</li>
+  <li>{{sampleNum | number}}</li>
+  <li>{{sampleNum | number : '3.2-3' }}</li>
+  <li>{{(sampleNum * 1000) | number : '3.2-3' }}</li>
+  <li>{{sampleNum | number : '1.2-2' }}</li>
+  <li>{{sampleNum | number : '1.2-2' : 'en' }}</li>
+</ul>
+
+
+<h4>Datum</h4>
+<ul>
+  <li>{{sampleDate}}</li>
+  <li>{{sampleDate | date }}</li>
+  <li>{{sampleDate | date : 'mediumDate' }}</li>
+  <li>{{sampleDate | date : 'yyyy' }}</li>
+  <li>{{sampleDate | date : 'long' }}</li>
+  <li>{{sampleDate | date : 'long' : '-0700' }}</li>
+  <li>{{sampleDate | date : 'long' : '-0700' : 'en' | uppercase}}</li>
+</ul>
+
+<h4>Strings</h4>
+<ul>
+  <li>{{sampleString}}</li>
+  <li>{{sampleString | uppercase }}</li>
+  <li>{{sampleString | lowercase }}</li>
+</ul>
