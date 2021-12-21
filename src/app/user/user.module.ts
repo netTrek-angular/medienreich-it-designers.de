@@ -1,8 +1,7 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { UserComponent } from './user.component';
-import { UserAvatarComponent } from './user-avatar/user-avatar.component';
-
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {UserComponent} from './user.component';
+import {UserAvatarComponent} from './user-avatar/user-avatar.component';
 
 
 @NgModule({

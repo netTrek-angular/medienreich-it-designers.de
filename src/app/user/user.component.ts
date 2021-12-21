@@ -20,4 +20,6 @@ export class UserComponent  {
   chgName() {
     this.username = 'peter';
   }
+
+
 }
