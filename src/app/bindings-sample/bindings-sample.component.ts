@@ -34,7 +34,15 @@ export class BindingsSampleComponent {
     this.imgAlt = 'small cat';
   }
 
-  select(selected: number) {
+  select(selected: number, $event: MouseEvent) {
     this.selected = selected;
+  }
+
+  mouseOver($event: MouseEvent) {
+    console.log($event.type, $event)
+  }
+
+  mouseOut($event: MouseEvent) {
+    console.log($event.type, $event)
   }
 }

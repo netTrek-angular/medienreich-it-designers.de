@@ -2,28 +2,46 @@
 
 <itd-countdown></itd-countdown>
 <strong>{{selected}}</strong>
+<!--<ul (mousemove)="move()"> -- move vermeiden -->
 <ul>
   <li
     [class.my-content]="selected === 1"
-    (click)="select(1)">Ausdruck = [{{ 1 + 1 }}] - BITTE NIE SO VERWENDEN</li>
+    (click)="select(1, $event)">Ausdruck = [{{ 1 + 1 }}] - BITTE NIE SO VERWENDEN</li>
   <li
     [class.my-content]="selected === 2"
-    (click)="select(2)">Ausdruck - Eigenschaftsbindung = [{{prop}}]</li>
+    (click)="select(2,$event)">Ausdruck - Eigenschaftsbindung = [{{prop}}]</li>
   <li
     [class.my-content]="selected === 3"
-    (click)="select(3)">Ausdruck - MwSt berechnen [{{netto * 1.19}}]</li>
+    (click)="select(3,$event)">Ausdruck - MwSt berechnen [{{netto * 1.19}}]</li>
   <li
     [class.my-content]="selected === 4"
-    (click)="select(4)">Ausdruck - MwSt mit Methode [{{calcBrutto(netto)}}] - sparsame Nutzung (lieber Pipes)</li>
+    (click)="select(4,$event)">Ausdruck - MwSt mit Methode [{{calcBrutto(netto)}}] - sparsame Nutzung (lieber Pipes)</li>
 </ul>
 
 <div [innerText]="innerText"
      [style.color]="fontColor"
      [style.backgroundColor]="bgColor"
      [style.width.%]="width"
-></div>
+>
+</div>
 <div class="my-content" [innerHTML]="innerHtml"></div>
 <div class="static-class" [class]="classnames" [innerHTML]="innerHtml"></div>
+
+<!--
+
+<div style="background-color: blue"
+     (mouseover)="mouseOver($event)"
+     (mouseout)="mouseOut($event)"
+>
+-->
+
+<div style="background-color: blue; min-height: 100px"
+     (mouseenter)="mouseOver($event)"
+     (mouseleave)="mouseOut($event)"
+>
+  Hello Word
+  <div style="display: inline-block; background-color: red" >Test</div>
+</div>
 
 <img [src]="imgAbsolutPath" [attr.alt]="imgAlt"/>
 <img src="./assets/img/{{imgFile}}" alt="{{imgAlt}}"/>
