@@ -11,6 +11,7 @@ import {PipeSampleModule} from "./pipe-sample/pipe-sample.module";
 
 // Einbinden der deutschen locales für Pipes
 import '@angular/common/locales/global/de';
+import { RxjsSamplesModule } from './rxjs-samples/rxjs-samples.module';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import '@angular/common/locales/global/de';
     DirectiveSamplesModule,
     UtilsModule,
     PipeSampleModule,
+    RxjsSamplesModule,
   ],
   providers: [
     {
