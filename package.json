@@ -11,7 +11,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "cypress:run": "cypress run",
+    "start:rest": "json-server mock/db.json --watch"
   },
   "private": true,
   "dependencies": {
@@ -44,6 +45,7 @@
     "cypress": "latest",
     "eslint": "^8.2.0",
     "jasmine-core": "~3.10.0",
+    "json-server": "^0.17.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.1.0",
