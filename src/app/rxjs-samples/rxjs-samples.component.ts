@@ -109,9 +109,11 @@ export class RxjsSamplesComponent implements OnInit {
 
   private subscribe(observable: Observable<number>, msg: string = '') {
     return observable.subscribe(
-      n => console.log('next ', msg, n),
-      e => console.error('error ', msg, e),
-      () => console.warn(msg, ' ich habe fertig')
+      {
+        next: n => console.log('next ', msg, n),
+        error: e => console.error('error ', msg, e),
+        complete: () => console.warn(msg, ' ich habe fertig')
+      }
     );
   }
 }
