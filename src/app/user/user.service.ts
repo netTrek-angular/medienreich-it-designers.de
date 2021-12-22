@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {User} from "./user";
+import {BehaviorSubject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class UserService {
     {firstname: 'Heike', lastname: 'Müller'},
     {firstname: 'Petra', lastname: 'Mayer'},
   ]
-  selectedUser?: User;
+  selectedUser: BehaviorSubject<User | undefined> = new BehaviorSubject<User | undefined>( undefined );
 
   name = 'Saban Ünlü'; // lass ich drin wegen der alten Beispiel
 
@@ -20,6 +21,6 @@ export class UserService {
   }
 
   selectUser(user: User) {
-    this.selectedUser = user === this.selectedUser ? undefined : user;
+    this.selectedUser.next( user === this.selectedUser.value ? undefined : user );
   }
 }

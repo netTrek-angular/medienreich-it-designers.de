@@ -35,7 +35,7 @@ export class RxjsSamplesComponent implements OnInit {
   }
 
   private initNewSample () {
-    const observable: Observable<number> = new Observable( subscriber => {
+    const observable: Observable<number> = new Observable<number>( subscriber => {
       let count = 0;
       const id = window.setInterval(
         () => {
@@ -45,12 +45,11 @@ export class RxjsSamplesComponent implements OnInit {
         }, 500
       )
       return () => window.clearInterval( id )
-    })
+    }).pipe(
+      take ( 3 )
+    )
 
-    const subscription = this.subscribe(
-      observable.pipe(
-        take ( 3 )
-      ), '#1 Own Observable ');
+    const subscription = this.subscribe( observable, '#1 Own Observable ');
   }
 
   private initBehSample () {

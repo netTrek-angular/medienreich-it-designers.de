@@ -3,7 +3,7 @@
 <itd-user-list-item
   *ngFor="let user of $user.users; even as e"
   [class.even]="e"
-  [isSelected]="$user.selectedUser===user"
+  [isSelected]="($user.selectedUser | async) ===user"
   [user]="user"
   (selectedUsr)="selectUser($event)"
 ></itd-user-list-item>
