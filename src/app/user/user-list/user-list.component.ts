@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {User} from "../user";
+import {UserService} from "../user.service";
 
 @Component({
   selector: 'itd-user-list',
@@ -8,16 +9,9 @@ import {User} from "../user";
 })
 export class UserListComponent  {
 
-  users: User[] = [
-    {firstname: 'Saban', lastname: 'Ünlü', age: 44},
-    {firstname: 'Heike', lastname: 'Müller'},
-    {firstname: 'Petra', lastname: 'Mayer'},
-  ]
-  selectedUser?: User;
-
-  constructor() { }
+  constructor( public $user: UserService ) { }
 
   selectUser($event: User) {
-    this.selectedUser = $event === this.selectedUser ? undefined : $event;
+    this.$user.selectUser ( $event );
   }
 }

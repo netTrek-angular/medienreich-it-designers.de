@@ -1,12 +1,12 @@
 <span itdDanger>{{ title }} app is running!</span>
-<p>{{user | json}}</p>
-<itd-user></itd-user>
+<p>{{user.selectedUser | json}}</p>
 <!--
+<itd-user></itd-user>
 <itd-bindings-sample></itd-bindings-sample>
-<itd-user-list></itd-user-list>
 <itd-directive-samples itdDanger></itd-directive-samples>
 <itd-pipe-sample></itd-pipe-sample>
 -->
 
+<itd-user-list></itd-user-list>
 
 <router-outlet></router-outlet>
