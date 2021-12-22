@@ -1,5 +1,6 @@
 import {Component, HostBinding} from '@angular/core';
 import {UserService} from "./user/user.service";
+import {AppLoadingService} from "./app-loading.service";
 
 @Component({
   selector: 'itd-root',
@@ -9,6 +10,6 @@ import {UserService} from "./user/user.service";
 export class AppComponent {
   title = 'medienreich-it-designers';
 
-  constructor( public user: UserService ) {
+  constructor( public user: UserService, public loading: AppLoadingService ) {
   }
 }

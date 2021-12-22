@@ -1,4 +1,5 @@
 <span itdDanger>{{ title }} app is running!</span>
+<p *ngIf="(loading.loading$ | async)! > 0 ">loading</p>
 <p>{{user.selectedUser | async | json}}</p>
 <!--
 <itd-bindings-sample></itd-bindings-sample>

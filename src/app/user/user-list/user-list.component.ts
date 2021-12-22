@@ -13,7 +13,7 @@ export class UserListComponent implements OnInit, OnDestroy {
 
   private userSub?: Subscription;
 
-  users$: Observable<User[]> = this.$user.getUsers();
+  // users$: Observable<User[]> = this.$user.getUsers();
 
   constructor( public $user: UserService ) { }
 

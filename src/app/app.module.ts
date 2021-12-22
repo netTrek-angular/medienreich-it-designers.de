@@ -12,6 +12,9 @@ import {PipeSampleModule} from "./pipe-sample/pipe-sample.module";
 // Einbinden der deutschen locales für Pipes
 import '@angular/common/locales/global/de';
 import { RxjsSamplesModule } from './rxjs-samples/rxjs-samples.module';
+import {HTTP_INTERCEPTORS} from "@angular/common/http";
+import {AppLoadingInterceptor} from "./app-loading.interceptor";
+import {AppAuthInterceptor} from "./app-auth.interceptor";
 
 @NgModule({
   declarations: [
@@ -30,6 +33,12 @@ import { RxjsSamplesModule } from './rxjs-samples/rxjs-samples.module';
   providers: [
     {
       provide: LOCALE_ID, useValue: 'de' // standard Pipe-Sprache der Anwendung
+    },
+    {
+      provide: HTTP_INTERCEPTORS, useClass: AppLoadingInterceptor, multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS, useClass: AppAuthInterceptor, multi: true
     }
   ],
   bootstrap: [AppComponent]
