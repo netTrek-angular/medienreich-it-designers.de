@@ -5,6 +5,7 @@ import {BindingsSampleComponent} from "./bindings-sample/bindings-sample.compone
 import {HomeComponent} from "./home/home.component";
 import {UserEditComponent} from "./user/user-edit/user-edit.component";
 import {CanActiveUsersGuard} from "./user/can-active-users.guard";
+import {UserDetailsResolver} from "./user/user-edit/user-details.resolver";
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'home'},
@@ -14,7 +15,14 @@ const routes: Routes = [
       CanActiveUsersGuard
     ],
     children: [
-      {path: 'edit/:id', component: UserEditComponent }
+      {path: 'edit/:id', component: UserEditComponent,
+        data: {
+          routeTitle: 'Dies ist die Edit-View'
+        },
+        resolve: {
+          user: UserDetailsResolver
+        }
+      }
     ]
   },
   {path: 'bindings', component: BindingsSampleComponent },

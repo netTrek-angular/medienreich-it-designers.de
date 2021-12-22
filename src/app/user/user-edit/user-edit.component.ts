@@ -15,11 +15,20 @@ export class UserEditComponent implements OnInit, OnDestroy {
 
   currentIndex?: number;
   currentUser?: User;
+  currentTitle?: string;
 
   constructor( private route: ActivatedRoute, private user: UserService, private router: Router ) { }
 
   ngOnInit(): void {
     this.sub.add(
+      this.route.data.pipe(
+        // map ( data => data['user'] )
+      )
+      .subscribe ( data => {
+        this.currentUser = data['user'] as User | undefined;
+        this.currentTitle = data['routeTitle'] as string;
+      } )
+/*
       this.route.paramMap
         .pipe(
           map ( (pMap: ParamMap) => parseInt( pMap.get( 'id' ) ?? '0' , 10 ) ),
@@ -29,6 +38,7 @@ export class UserEditComponent implements OnInit, OnDestroy {
           switchMap ( id => this.user.getUserByID( id ) )
         )
         .subscribe( usr => this.currentUser = usr )
+*/
     )
   }
 
