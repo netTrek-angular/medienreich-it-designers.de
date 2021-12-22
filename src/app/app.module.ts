@@ -15,6 +15,7 @@ import { RxjsSamplesModule } from './rxjs-samples/rxjs-samples.module';
 import {HTTP_INTERCEPTORS} from "@angular/common/http";
 import {AppLoadingInterceptor} from "./app-loading.interceptor";
 import {AppAuthInterceptor} from "./app-auth.interceptor";
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import {AppAuthInterceptor} from "./app-auth.interceptor";
     UtilsModule,
     PipeSampleModule,
     RxjsSamplesModule,
+    HomeModule,
   ],
   providers: [
     {

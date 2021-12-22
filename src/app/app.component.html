@@ -1,7 +1,7 @@
 <h2 itdDanger>{{ title }} app is running!</h2>
 <p *ngIf="(loading.loading$ | async)! > 0 ">loading</p>
 <nav>
-  <a>home</a> |
+  <a routerLink="home" routerLinkActive="active">home</a> |
   <a>dash</a> |
   <a routerLink="users" routerLinkActive="active">users</a> |
   <a routerLink="bindings" routerLinkActive="active">bindings</a>
@@ -15,11 +15,9 @@
 <itd-user></itd-user>
 <itd-user-list></itd-user-list>
 -->
-
+<hr>
 <router-outlet></router-outlet>
 
 
-
-
-
+<hr>
 <footer>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad aliquid, asperiores assumenda dicta, est et exercitationem facilis iste labore magni minima mollitia nisi provident rem repudiandae sunt tempore ut?</footer>
