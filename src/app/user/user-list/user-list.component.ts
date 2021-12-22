@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {User} from "../user";
 import {UserService} from "../user.service";
-import {filter, Subscription} from "rxjs";
+import {filter, Observable, Subscription} from "rxjs";
 
 @Component({
   selector: 'itd-user-list',
@@ -9,7 +9,10 @@ import {filter, Subscription} from "rxjs";
   styleUrls: ['./user-list.component.scss']
 })
 export class UserListComponent implements OnInit, OnDestroy {
+
   private userSub?: Subscription;
+
+  users$: Observable<User[]> = this.$user.getUsers();
 
   constructor( public $user: UserService ) { }
 

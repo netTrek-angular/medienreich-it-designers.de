@@ -1,23 +1,30 @@
 import { Injectable } from '@angular/core';
 import {User} from "./user";
-import {BehaviorSubject} from "rxjs";
+import {BehaviorSubject, Observable} from "rxjs";
+import {HttpClient} from "@angular/common/http";
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-
+  /*
   users: User[] = [
     {firstname: 'Saban', lastname: 'Ünlü', age: 44},
     {firstname: 'Heike', lastname: 'Müller'},
     {firstname: 'Petra', lastname: 'Mayer'},
   ]
+  */
   selectedUser: BehaviorSubject<User | undefined> = new BehaviorSubject<User | undefined>( undefined );
 
   name = 'Saban Ünlü'; // lass ich drin wegen der alten Beispiel
 
-  constructor( ) {
-    console.log( 'user-service')
+  constructor( private http: HttpClient ) {
+    console.log( 'user-service', http )
+  }
+
+  getUsers(): Observable<User[]> {
+    return this.http.get<User[]>( environment.api.users );
   }
 
   selectUser(user: User) {
