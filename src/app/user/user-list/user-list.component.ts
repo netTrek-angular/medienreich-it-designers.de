@@ -25,11 +25,25 @@ export class UserListComponent implements OnInit, OnDestroy {
     this.userSub = this.$user.selectedUser
       .pipe(
         filter ( user => !!user /*user !== undefined*/ )
+      ).subscribe(
+        user => {
+          this.$user.getUserByID( user!.id! ).subscribe(
+            console.log
+          );
+        }
       )
-      .subscribe( n => console.log ('aktueler benutzer', n) )
+      // .subscribe( n => console.log ('aktueler benutzer', n) )
   }
 
   ngOnDestroy(): void {
     this.userSub!.unsubscribe();
+  }
+
+  createNewUsr() {
+    this.$user.createUser( {
+      firstname: 'Saban', lastname: 'Ünlü'
+    }).subscribe(
+      console.log
+    )
   }
 }

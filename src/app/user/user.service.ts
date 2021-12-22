@@ -27,6 +27,14 @@ export class UserService {
     return this.http.get<User[]>( environment.api.users );
   }
 
+  getUserByID( id: number ): Observable<User> {
+    return this.http.get<User>( `${environment.api.users}/${id}` );
+  }
+
+  createUser ( user: User ): Observable<User> {
+    return this.http.post<User>( environment.api.users, user );
+  }
+
   selectUser(user: User) {
     this.selectedUser.next( user === this.selectedUser.value ? undefined : user );
   }
