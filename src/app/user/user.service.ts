@@ -39,7 +39,7 @@ export class UserService {
     );
   }
 
-  selectUser(user: User) {
+  selectUser(user?: User) {
     this.selectedUser.next( user === this.selectedUser.value ? undefined : user );
   }
 

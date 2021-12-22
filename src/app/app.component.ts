@@ -14,11 +14,11 @@ export class AppComponent {
 
   constructor( /*public user: UserService, */public loading: AppLoadingService, router: Router ) {
 
-    router.events.pipe(
-      filter ( event => event instanceof NavigationEnd )
-    ).
-    subscribe(
-      console.log
-    )
+    // router.events.pipe(
+    //   filter ( event => event instanceof NavigationEnd )
+    // ).
+    // subscribe(
+    //   console.log
+    // )
   }
 }

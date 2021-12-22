@@ -5,6 +5,8 @@ import {UserAvatarComponent} from './user-avatar/user-avatar.component';
 import {UserListComponent} from './user-list/user-list.component';
 import {UserListItemComponent} from './user-list/user-list-item/user-list-item.component';
 import {HttpClientModule} from "@angular/common/http";
+import { UserEditComponent } from './user-edit/user-edit.component';
+import {RouterModule} from "@angular/router";
 
 
 @NgModule({
@@ -12,11 +14,13 @@ import {HttpClientModule} from "@angular/common/http";
     UserComponent,
     UserAvatarComponent,
     UserListComponent,
-    UserListItemComponent
+    UserListItemComponent,
+    UserEditComponent
   ],
   imports: [
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule
   ],
   exports: [
     UserComponent,
