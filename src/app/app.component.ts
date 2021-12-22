@@ -10,6 +10,6 @@ import {AppLoadingService} from "./app-loading.service";
 export class AppComponent {
   title = 'medienreich-it-designers';
 
-  constructor( public user: UserService, public loading: AppLoadingService ) {
+  constructor( /*public user: UserService, */public loading: AppLoadingService ) {
   }
 }

@@ -1,14 +1,25 @@
-<span itdDanger>{{ title }} app is running!</span>
+<h2 itdDanger>{{ title }} app is running!</h2>
 <p *ngIf="(loading.loading$ | async)! > 0 ">loading</p>
-<p>{{user.selectedUser | async | json}}</p>
+<nav>
+  <a>home</a> |
+  <a>dash</a> |
+  <a routerLink="users" routerLinkActive="active">users</a> |
+  <a routerLink="bindings" routerLinkActive="active">bindings</a>
+</nav>
 <!--
+<p>{{user.selectedUser | async | json}}</p>
 <itd-bindings-sample></itd-bindings-sample>
 <itd-directive-samples itdDanger></itd-directive-samples>
 <itd-pipe-sample></itd-pipe-sample>
 <itd-rxjs-samples></itd-rxjs-samples>
 <itd-user></itd-user>
+<itd-user-list></itd-user-list>
 -->
 
-<itd-user-list></itd-user-list>
-
 <router-outlet></router-outlet>
+
+
+
+
+
+<footer>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad aliquid, asperiores assumenda dicta, est et exercitationem facilis iste labore magni minima mollitia nisi provident rem repudiandae sunt tempore ut?</footer>
