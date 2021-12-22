@@ -1,12 +1,18 @@
 <h3>user-list works!</h3>
 
-<itd-user-list-item
-  *ngFor="let user of users$ | async; even as e"
-  [class.even]="e"
-  [isSelected]="($user.selectedUser | async) ===user"
-  [user]="user"
-  (selectedUsr)="selectUser($event)"
-></itd-user-list-item>
+<ng-container *ngIf="users$ | async as users">
+  <!--
+  <p>{{users | json}}</p>
+  -->
+  <itd-user-list-item
+    *ngFor="let user of users; even as e"
+    [class.even]="e"
+    [isSelected]="($user.selectedUser | async) ===user"
+    [user]="user"
+    (selectedUsr)="selectUser($event)"
+  ></itd-user-list-item>
+</ng-container>
+
 
 <button (click)="createNewUsr()">create new User</button>
 

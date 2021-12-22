@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnDestroy, OnInit} from '@angular/core';
 import {User} from "../user";
 import {UserService} from "../user.service";
 import {filter, Observable, Subscription} from "rxjs";
@@ -6,7 +6,8 @@ import {filter, Observable, Subscription} from "rxjs";
 @Component({
   selector: 'itd-user-list',
   templateUrl: './user-list.component.html',
-  styleUrls: ['./user-list.component.scss']
+  styleUrls: ['./user-list.component.scss'],
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UserListComponent implements OnInit, OnDestroy {
 
