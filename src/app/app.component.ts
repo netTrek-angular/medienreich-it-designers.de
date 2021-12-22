@@ -1,4 +1,5 @@
 import {Component, HostBinding} from '@angular/core';
+import {UserService} from "./user/user.service";
 
 @Component({
   selector: 'itd-root',
@@ -7,4 +8,7 @@ import {Component, HostBinding} from '@angular/core';
 })
 export class AppComponent {
   title = 'medienreich-it-designers';
+
+  constructor( public user: UserService ) {
+  }
 }

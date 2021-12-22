@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import {Component, Inject, Injectable, LOCALE_ID} from '@angular/core';
+import {UserService} from "./user.service";
 
 @Component({
   selector: 'itd-user',
@@ -13,12 +14,15 @@ import {Component} from '@angular/core';
   // encapsulation: ViewEncapsulation.Emulated
 })
 export class UserComponent  {
-  username: string = 'saban';
+  // username: string = 'saban';
 
-  constructor() { }
+  constructor( public user: UserService, @Inject(LOCALE_ID) public local: string ) {
+    console.log(user, local)
+    // this.username = user.name;
+  }
 
   chgName() {
-    this.username = 'peter';
+    this.user.name = 'peter müller';
   }
 
 
