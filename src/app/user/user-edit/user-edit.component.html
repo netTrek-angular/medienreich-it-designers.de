@@ -2,6 +2,29 @@
 <h4>{{currentTitle}}</h4>
 <p>{{currentUser | json }}</p>
 
+<form #myForm='ngForm' (ngSubmit)="update( myForm.value )">
+  <input #firstname='ngModel' [ngModel]="currentUser?.firstname ?? ''" name="firstname"
+         placeholder="firstname" required type="text">
+  <div *ngIf="firstname.errors && firstname.dirty">
+    <span *ngIf="firstname.errors['required']">Bitte trage einen namen ein</span>
+  </div>
+<!--
+  <div *ngIf="firstname.errors  && firstname.dirty">
+    there are errors {{ firstname.errors | json }}
+    <span *ngIf="firstname.errors['required']">required</span>
+  </div>
+  -->
+
+  <input #lastname='ngModel' [ngModel]="currentUser?.lastname ?? ''" name="lastname"
+         ngModel placeholder="lastname" type="text">
+  <input #age='ngModel' [ngModel]="currentUser?.age ?? 0" name="age"
+         ngModel placeholder="age" type="number">
+  <button [disabled]="myForm.invalid" type="submit">submit</button>
+  <button [disabled]="myForm.pristine" type="reset">reset</button>
+</form>
+
+
+
 <!--
 <button (click)="back()">x</button>
 -->

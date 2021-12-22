@@ -39,6 +39,15 @@ export class UserService {
     );
   }
 
+  updateUser ( user: User ): Observable<User> {
+    return this.http.put<User>( `${environment.api.users}/${user.id}`, user ).pipe(
+      tap ( n => this.getUsers().subscribe() )
+      // tap ( user => {
+      //   this.users.next( [...this.users.value ?? [], user ] )
+      // } )
+    );
+  }
+
   selectUser(user?: User) {
     this.selectedUser.next( user === this.selectedUser.value ? undefined : user );
   }

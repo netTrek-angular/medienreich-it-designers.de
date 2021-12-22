@@ -7,6 +7,7 @@ import {UserListItemComponent} from './user-list/user-list-item/user-list-item.c
 import {HttpClientModule} from "@angular/common/http";
 import { UserEditComponent } from './user-edit/user-edit.component';
 import {RouterModule} from "@angular/router";
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import {RouterModule} from "@angular/router";
   imports: [
     CommonModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   exports: [
     UserComponent,
